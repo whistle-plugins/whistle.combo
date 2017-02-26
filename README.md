@@ -2,6 +2,8 @@
 
 A combo plugin base on [tianmajs](https://github.com/tianmajs) for whistle.
 
+A combo url is like `http://i.cdn.com/??x.js,y.js,z.js`. whistle.combo splits the combo url to a path array `[x.js, y.js, z.js]` and concat them one by one.
+
 ## Usage
 
 **1. install [whistle](https://github.com/avwo/whistle)(version of whistle must above or equal 0.12.3, check yourself by typing `w2 -V`) first, then start whistle, and set your config, visit [https://github.com/avwo/whistle](https://github.com/avwo/whistle) to get more info about whistle usage**
@@ -22,7 +24,7 @@ $ npm i -g whistle.combo --registry=https://registry.npm.taobao.org
 ```
 # [] means optional
 # by default, delimiter is `??`, seperator is `,`
-# url like http://i.cdn.com/??x.js,y.js,z.js will concat x.js, y.js and z.js togother
+
 i.cdn.com combo://[delimiter:seperator@]absoluteRootDir
 
 
