@@ -6,7 +6,7 @@ A combo url is like `http://i.cdn.com/??x.js,y.js,z.js`. whistle.combo splits th
 
 ## Usage
 
-**1. install [whistle](https://github.com/avwo/whistle)(version of whistle must above or equal 0.12.3, check yourself by typing `w2 -V`) first, then start whistle, and set your config, visit [https://github.com/avwo/whistle](https://github.com/avwo/whistle) to get more info about whistle usage**
+**1. first install [whistle](https://github.com/avwo/whistle)(version of whistle must above or equal 0.12.3, check by typing `w2 -V`) and start whistle. Visit [https://github.com/avwo/whistle](https://github.com/avwo/whistle) to get more info about whistle usage**
 
 ```
 $ npm i -g whistle --registry=https://registry.npm.taobao.org
@@ -24,7 +24,6 @@ $ npm i -g whistle.combo --registry=https://registry.npm.taobao.org
 ```
 # [] means optional
 # by default, delimiter is `??`, seperator is `,`
-
 i.cdn.com combo://[delimiter:seperator@]absoluteRootDir
 
 
