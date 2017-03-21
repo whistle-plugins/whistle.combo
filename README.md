@@ -2,7 +2,7 @@
 
 A combo plugin base on [tianmajs](https://github.com/tianmajs) for whistle.
 
-A combo url is like `http://i.cdn.com/??x.js,y.js,z.js`. whistle.combo splits the combo url to a path array `[x.js, y.js, z.js]` and concat them one by one.
+A combo url is like `http://i.cdn.com/??x.js,y.js,z.js`. whistle.combo splits the combo url to a path array `[x.js, y.js, z.js]` and concats them one by one.
 
 ## Usage
 
