@@ -1,7 +1,8 @@
 // http://eslint.org/docs/user-guide/configuring
 
 module.exports = {
-  "extends": "eslint-config-imweb",
-  "rules": {
+  root: true,
+  extends: 'eslint-config-imweb',
+  rules: {
   }
 }

@@ -22,10 +22,7 @@
     "q": "^1.4.1",
     "tianma": "^1.0.0",
     "tianma-combo": "^1.0.1",
-    "tianma-mount": "^1.1.0",
-    "tianma-rewrite": "^1.0.0",
-    "tianma-static": "^1.0.0",
-    "tianma-cache": "^1.0.0"
+    "tianma-static": "^1.0.0"
   },
   "engines": {
     "node": ">=0.12.0"
