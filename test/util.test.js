@@ -5,16 +5,12 @@ const expect = require('Chai').expect;
 
 describe('util', () => {
   describe('#getFreshPort()', () => {
-    it('should return a number between 3000 and 60000, & should be deferent each time', (done) => {
+    it('should return a number above 20000 and should be deferent each time', (done) => {
       util.getFreshPort().then((port1) => {
         util.getFreshPort().then((port2) => {
-          expect(port1).to.be.below(60000);
-          expect(port1).to.be.above(30000);
-
-          expect(port2).to.be.below(60000);
-          expect(port2).to.be.above(30000);
-
-          expect(Math.abs(port1 - port2) > 0 && port1 > 30000 && port2 < 60000);
+          expect(port1).to.be.above(20000);
+          expect(port2).to.be.above(20000);
+          expect(Math.abs(port1 - port2) > 0);
           done();
         });
       });
