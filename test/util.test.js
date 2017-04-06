@@ -1,5 +1,7 @@
+/* eslint import/no-extraneous-dependencies: 0 */
+
 const util = require('../lib/util');
-const expect = require('Chai').expect; // eslint-disable-line
+const expect = require('Chai').expect;
 
 describe('util', () => {
   describe('#getFreshPort()', () => {
@@ -24,8 +26,8 @@ describe('util', () => {
       expect({
         delimiter: '/c/=',
         seperator: ',',
-        root: '/Users/jiewei.ljw/work/wwwwww/test',
-      }).to.eql(util.parseRuleValue('/c/=:,@/Users/jiewei.ljw/work/wwwwww/test'));
+        root: __dirname,
+      }).to.eql(util.parseRuleValue(`/c/=:,@${__dirname}`));
 
       expect({
         delimiter: '??',

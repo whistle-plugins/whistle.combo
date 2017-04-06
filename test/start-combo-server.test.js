@@ -1,5 +1,7 @@
-const expect = require('Chai').expect; // eslint-disable-line
-const request = require('request'); // eslint-disable-line
+/* eslint import/no-extraneous-dependencies: 0 */
+
+const expect = require('Chai').expect;
+const request = require('request');
 const startServer = require('../lib/start-combo-server');
 
 describe('start-combo-server', () => {
@@ -20,23 +22,31 @@ describe('start-combo-server', () => {
     });
   });
 
-  it('should successfully start a combo server', (done) => {
+  it('should successfully start a combo server', () => {
+    expect(port).to.be.ok; // eslint-disable-line
+    expect(app).to.be.ok; // eslint-disable-line
+  });
+
+  it('valid req should successfully return 200', (done) => {
     request.get(`http://127.0.0.1:${port}/??util.test.js,start-combo-server.test.js`, (err, res, body) => {
       expect(err).not.exist; // eslint-disable-line
       expect(res.statusCode).to.equal(200);
       expect(body).to.have.length.above(0);
       expect(res.headers['content-type'], /javascript/);
-
-      // should throw a exception when request a invalid url
-      request.get(`http://127.0.0.1:${port}/??util.test0.js,start-combo-server.test.js`, (err0, res0, body0) => {
-        expect(err0).not.exist; // eslint-disable-line
-        expect(res0.statusCode).to.equal(500);
-        expect(body0).to.contains('Error:');
-        expect(res.headers['content-type'], /javascript/);
-        done();
-      });
+      done();
     });
   });
+
+  it('invalid req should return 500', (done) => {
+    request.get(`http://127.0.0.1:${port}/??util.test0.js,start-combo-server.test.js`, (err, res, body) => {
+      expect(err).not.exist; // eslint-disable-line
+      expect(res.statusCode).to.equal(500);
+      expect(body).to.contains('Error:');
+      expect(res.headers['content-type'], /javascript/);
+      done();
+    });
+  });
+
   after(function () {
     app.close();
   });
