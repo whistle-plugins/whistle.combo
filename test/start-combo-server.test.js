@@ -1,4 +1,5 @@
 /* eslint import/no-extraneous-dependencies: 0 */
+/* eslint no-unused-expressions: 0 */
 
 const expect = require('Chai').expect;
 const request = require('request');
@@ -23,13 +24,13 @@ describe('start-combo-server', () => {
   });
 
   it('should successfully start a combo server', () => {
-    expect(port).to.be.ok; // eslint-disable-line
-    expect(app).to.be.ok; // eslint-disable-line
+    expect(port).to.be.ok;
+    expect(app).to.be.ok;
   });
 
   it('valid req should successfully return 200', (done) => {
     request.get(`http://127.0.0.1:${port}/??util.test.js,start-combo-server.test.js`, (err, res, body) => {
-      expect(err).not.exist; // eslint-disable-line
+      expect(err).not.exist;
       expect(res.statusCode).to.equal(200);
       expect(body).to.have.length.above(0);
       expect(res.headers['content-type'], /javascript/);
@@ -39,7 +40,7 @@ describe('start-combo-server', () => {
 
   it('invalid req should return 500', (done) => {
     request.get(`http://127.0.0.1:${port}/??util.test0.js,start-combo-server.test.js`, (err, res, body) => {
-      expect(err).not.exist; // eslint-disable-line
+      expect(err).not.exist;
       expect(res.statusCode).to.equal(500);
       expect(body).to.contains('Error:');
       expect(res.headers['content-type'], /javascript/);

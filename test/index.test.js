@@ -1,9 +1,6 @@
 /* eslint no-unused-expressions: 0 */
-/* eslint no-unused-vars: 0 */
 /* eslint no-console: 0 */
 /* eslint import/no-extraneous-dependencies: 0 */
-const path = require('path');
-const fs = require('fs');
 
 const expect = require('Chai').expect;
 const whistle = require('whistle');
