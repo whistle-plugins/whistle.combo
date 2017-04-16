@@ -1,5 +1,9 @@
 # whistle.combo
+[![GitHub issues](https://img.shields.io/github/issues/whistle-plugins/whistle.combo.svg)](https://github.com/whistle-plugins/whistle.combo/issues)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/whistle-plugins/whistle.combo/master/LICENSE)
+[![node version](https://img.shields.io/badge/node.js-%3E=_6.0.0-green.svg)](http://nodejs.org/download/)
+[![Build Status](https://img.shields.io/travis/whistle-plugins/whistle.combo.svg)](https://travis-ci.org/whistle-plugins/whistle.combo)
+[![Test coverage](https://codecov.io/gh/whistle-plugins/whistle.combo/branch/master/graph/badge.svg)](https://codecov.io/gh/whistle-plugins/whistle.combo)
 
 
 A combo plugin base on [tianmajs](https://github.com/tianmajs) for whistle.

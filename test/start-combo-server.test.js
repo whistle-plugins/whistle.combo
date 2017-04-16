@@ -1,7 +1,8 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 /* eslint no-unused-expressions: 0 */
 
-const expect = require('Chai').expect;
+
+const expect = require('chai').expect;
 const request = require('request');
 const startServer = require('../lib/start-combo-server');
 
