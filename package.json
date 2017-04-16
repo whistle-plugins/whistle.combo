@@ -37,7 +37,7 @@
     },
     "scripts": {
       "lint": "eslint --ext .js lib/ test/ --fix",
-      "test": "mocha -R spec -t 5000",
-      "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec"
+      "test": "mocha -R spec -t 36000",
+      "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec -t 36000"
     }
   }
