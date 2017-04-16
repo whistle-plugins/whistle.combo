@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 
 const util = require('../lib/util');
-const expect = require('Chai').expect;
+const expect = require('chai').expect;
 
 describe('util', () => {
   describe('#getFreshPort()', () => {

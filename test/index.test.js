@@ -1,8 +1,7 @@
 /* eslint no-unused-expressions: 0 */
 /* eslint no-console: 0 */
 /* eslint import/no-extraneous-dependencies: 0 */
-
-const expect = require('Chai').expect;
+const expect = require('chai').expect;
 const whistle = require('whistle');
 const request = require('request');
 const util = require('../lib/util');
