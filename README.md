@@ -1,4 +1,6 @@
 # whistle.combo
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/whistle-plugins/whistle.combo/master/LICENSE)
+
 
 A combo plugin base on [tianmajs](https://github.com/tianmajs) for whistle.
 
