@@ -1,5 +1,3 @@
-/* eslint import/no-extraneous-dependencies: 0 */
-
 const util = require('../lib/util');
 const assert = require('assert');
 

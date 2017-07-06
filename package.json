@@ -39,6 +39,6 @@
   "scripts": {
     "lint": "eslint --ext .js lib/ test/ --fix",
     "test": "mocha -r intelli-espower-loader -R spec -t 36000",
-    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec -t 36000"
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- -r intelli-espower-loader -R spec -t 36000"
   }
 }

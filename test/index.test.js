@@ -1,6 +1,3 @@
-/* eslint no-unused-expressions: 0 */
-/* eslint no-console: 0 */
-/* eslint import/no-extraneous-dependencies: 0 */
 const assert = require('assert');
 const whistle = require('whistle');
 const request = require('request');
@@ -13,43 +10,35 @@ describe('combo-plugin', () => {
   before((done) => {
     util.getFreshPort().then((port0) => {
       port = port0;
-
       proxyRequest = request.defaults({
         proxy: `http://127.0.0.1:${port}`,
       });
-
       // start whistle
-      whistle(
-        {
-          port,
-          pluginPaths: [__dirname],
-          storage: '__test__',
-          rules: `i.alicdn.com combo://c/=:,@${__dirname}
+      whistle({
+        port,
+        pluginPaths: [__dirname],
+        storage: '__test__',
+        rules: `i.alicdn.com combo://c/=:,@${__dirname}
                 u.alicdn.com combo://${__dirname}
                 g.alicdn.com combo://c/=:,@${__dirname}/mock`,
-          debugMode: true,
-        },
-        () => {
-          done();
-          console.log(" Visit http://127.0.0.1:%s/ to access whistle.", port); // eslint-disable-line
-        },
-      );
+        debugMode: true,
+      }, () => {
+        done();
+        console.log(' Visit http://127.0.0.1:%s/ to access whistle.', port);
+      });
     });
   });
 
   it(`rule1: [i.alicdn.com combo://c/=:,@${__dirname}] should return 200`, (done) => {
-    proxyRequest(
-      {
-        url: 'http://i.alicdn.com/mock/c/=x.js,y.js',
-        rejectUnauthorized: false,
-      },
-      (err, res, body) => {
-        assert(!err);
-        assert(res.statusCode === 200);
-        assert(body.length > 0);
-        done();
-      },
-    );
+    proxyRequest({
+      url: 'http://i.alicdn.com/mock/c/=x.js,y.js',
+      rejectUnauthorized: false,
+    }, (err, res, body) => {
+      assert(!err);
+      assert(res.statusCode === 200);
+      assert(body.length > 0);
+      done();
+    });
   });
 
   it(`rule2: [u.alicdn.com combo://${__dirname}] should return 200`, (done) => {

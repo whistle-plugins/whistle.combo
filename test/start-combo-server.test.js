@@ -1,5 +1,3 @@
-/* eslint import/no-extraneous-dependencies: 0 */
-/* eslint no-unused-expressions: 0 */
 const assert = require('assert');
 const request = require('request');
 const startServer = require('../lib/start-combo-server');
