@@ -1,8 +1,6 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 /* eslint no-unused-expressions: 0 */
-
-
-const expect = require('chai').expect;
+const assert = require('assert');
 const request = require('request');
 const startServer = require('../lib/start-combo-server');
 
@@ -14,10 +12,10 @@ describe('start-combo-server', () => {
     startServer({
       root: __dirname,
     }, (err, config, server) => {
-      expect(!err);
-      expect(config.port);
-      expect(config.root === __dirname);
-      expect(server);
+      assert(!err);
+      assert(config.port);
+      assert(config.root === __dirname);
+      assert(server);
 
       app = server;
       port = config.port;
@@ -25,26 +23,25 @@ describe('start-combo-server', () => {
   });
 
   it('should successfully start a combo server', () => {
-    expect(port).to.be.ok;
-    expect(app).to.be.ok;
+    assert(port);
+    assert(app);
   });
 
   it('valid req should successfully return 200', (done) => {
     request.get(`http://127.0.0.1:${port}/??util.test.js,start-combo-server.test.js`, (err, res, body) => {
-      expect(err).not.exist;
-      expect(res.statusCode).to.equal(200);
-      expect(body).to.have.length.above(0);
-      expect(res.headers['content-type'], /javascript/);
+      assert(!err);
+      assert(res.statusCode === 200);
+      assert(body.length > 0);
+      assert(/javascript/.test(res.headers['content-type']));
       done();
     });
   });
 
   it('invalid req should return 500', (done) => {
     request.get(`http://127.0.0.1:${port}/??util.test0.js,start-combo-server.test.js`, (err, res, body) => {
-      expect(err).not.exist;
-      expect(res.statusCode).to.equal(500);
-      expect(body).to.contains('Error:');
-      expect(res.headers['content-type'], /javascript/);
+      assert(!err);
+      assert(res.statusCode === 500);
+      assert(/Error:/.test(body));
       done();
     });
   });
